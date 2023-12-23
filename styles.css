@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'ParryHotter';
+    src: url('fonts/parryhotter-webfont.woff2') format('woff2'),
+         url('fonts/parryhotter-webfont.woff') format('woff');
+ }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    height: 100px;
+    background-color: #003366;
+    justify-content: center;
+}
+
+h1 {
+    color: #DAA520;
+    font-family: 'ParryHotter', Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 48px;
+    /* padding-top: 20px; */
+}
+body {
+    background-color: #F0EAD6;
+    color: #5F5F5F;
+    font-family: 'Bebas Neue';
+}
+
+#book-list {
+    display:flex;
+    justify-content: center;
+    overflow-x: auto;
+    background-color: #B87333;
+}
+
+#book-list img {
+    width: 100px;
+    height: auto;
+    margin: 7px;
+}
+
+#book-info {
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+#book-info img {
+    height: auto;
+}
+
+#book-info div {
+    background-color: #D9D4CA;
+    width: 500px;
+    margin-left: 20px;
+    padding: 15px;
+}
+
+#book-info h4{
+    text-align: center;
+}
+#title {
+    color: #DAA520;
+    font-family: 'ParryHotter', Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#book-info div p {
+    font-family: 'Bebas Neue';
+}
+
+#reviews {
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+form {
+    height: auto;
+    width: 258px;
+    background-color:  #94B2C7;
+    padding: 10px;
+    text-align: center;
+}
+
+label{
+    font-size: 20px;
+    background-color: #003366;
+    color: #B87333
+}
+textarea {
+    display: inline-block;
+    border: 0;
+    width: 90%;
+    height: 80%;
+    color: #5F5F5F;
+    background: white; 
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Bebas Neue';
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    display:inline-block;
+    border: 0;
+    width: 50%;
+    height: 10%;
+    background: #B87333; 
+    color: #003366;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Bebas Neue', cursive;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+#review-display{
+    background-color: #D9D4CA;
+    width: 500px;
+    margin-left: 20px;
+    padding: 15px;
+}
