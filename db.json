@@ -62,5 +62,42 @@
             "summary":"As he climbs into the sidecar of Hagrid's motorbike and takes to the skies, leaving Privet Drive for the last time, Harry Potter knows that Lord Voldemort and the Death Eaters are not far behind. The protective charm that has kept Harry safe until now is broken, but he cannot keep hiding. The Dark Lord is breathing fear into everything Harry loves, and to stop him Harry will have to find and destroy the remaining Horcruxes. The final battle must begin – Harry must stand and face his enemy.",
             "rating":4.62
         }
-    ]
+    ],
+    "reviews" : [
+        {
+            "id": 1,
+            "bookId": 1,
+            "content": "I am OBSESSED with the magical world of Harry Potter, and I can’t wait to discover more about this world as the series continues!"
+        },
+        {
+            "id": 2,
+            "bookId": 2,
+            "content": "Dobby brings so much chaos to this book. I love it! How do you get a house elf in real life?"
+        },
+        {
+            "id": 3,
+            "bookId": 3,
+            "content": "So many twists and turns in the plot! Also, does anyone else think it’s super creepy that Pettigrew was sleeping in little boys’ beds for the last 12 years? Ick."
+        },
+        {
+            "id": 4,
+            "bookId": 4,
+            "content": "THE BEST BOOK! We learn so much more about the world of magic outside of Hogwarts! Can we get a spin off series about Beauxbatons?? I want to know more!! Also, dragons!!!"
+        },
+        {
+            "id": 5,
+            "bookId": 5,
+            "content": "I cried. A lot. The saddest book. I don’t think I can keep reading this series anymore. Too dark, too much heartbreak."
+        },
+        {
+            "id": 6,
+            "bookId": 6,
+            "content": "I felt like this book was never going to end! I get that we needed all of this background info, but geez… it felt like such a chore reading this!"
+        },
+        {
+            "id": 7,
+            "bookId": 7,
+            "content": "What a conclusion! There were definitely some parts that felt like they were moving a little slowly, but wow, there was still a lot of action! I feel like I can happily leave the wizarding world knowing all is well."
+        }
+      ]
 }
