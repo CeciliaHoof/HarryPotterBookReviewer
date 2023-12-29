@@ -1,10 +1,10 @@
 fetch('http://localhost:3000/books/')
     .then(resp => resp.json())
-    .then(data => console.log(data))
+    .then(data => renderBooks(data))
 
 fetch('http://localhost:3000/reviews/')
     .then(resp => resp.json())
-    .then(data => renderBooks(data))
+    .then(data => console.log(data))
 
 //DOM locations 
 const bookListLoc = document.querySelector('#book-list');
@@ -18,13 +18,11 @@ const ratingLoc = document.querySelector('#rating');
 const userRatingLoc = document.querySelector('#user-rating');
 const reviewsLoc = document.querySelector('#review-display');
 
-function renderBooks(bookDataObj){
-    //add user rating to each object in array 'books'
-    const booksArr = bookDataObj.books;
+function renderBooks(bookData){
 
     
 
-    booksArr.forEach(book => {
+    bookData.forEach(book => {
 
         //adds book cover to book list
         const bookImg = document.createElement('img');
