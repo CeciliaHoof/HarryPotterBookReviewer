@@ -9,9 +9,9 @@ fetch('http://localhost:3000/books/')
         displayBook(data[0])
     })
 
-fetch('http://localhost:3000/reviews/')
-    .then(resp => resp.json())
-    .then(data => console.log(data))
+// fetch('http://localhost:3000/reviews/')
+//     .then(resp => resp.json())
+//     .then(data => console.log(data))
 
 //DOM locations 
 const bookListLoc = document.querySelector('#book-list');
@@ -24,6 +24,8 @@ const summaryLoc = document.querySelector('#summary');
 const ratingLoc = document.querySelector('#rating');
 const userRatingLoc = document.querySelector('#user-rating');
 const reviewsLoc = document.querySelector('#review-list');
+const userReview = document.querySelector('form')
+
 
 const boltOne = document.querySelector('#bolt-1');
 const boltTwo = document.querySelector('#bolt-2');
@@ -85,15 +87,25 @@ function displayBook(book){
 }
         
 function renderReviews(reviewArr){
+    removeAllChildren(reviewsLoc);
     reviewArr.forEach(review => {
-        let id = selectedBook.id;
-        if (review.bookId === id){
             const reviewLi = document.createElement('li');
+            const br = document.createElement('br');
             reviewLi.textContent = review.content;
-            document.appendChild(reviewLi)
-        }
+            reviewsLoc.appendChild(reviewLi);
+            reviewsLoc.appendChild(br)     
     })
+    const newUserReview =  selectedBook.user_review;
+    const newUserReviewLi = document.createElement('li');
+    newUserReviewLi.textContent = newUserReview;
+    reviewsLoc.appendChild(newUserReviewLi);
+    
 }
+function removeAllChildren(parent){
+        while(parent.firstChild){
+            parent.removeChild(parent.firstChild);
+        }
+    }
 
 
 //Lightening Bolt Handler:
@@ -147,3 +159,14 @@ function fillBolts(bolt){
     selectedBook.user_rating = userRating;
 }
 
+
+//Review Submission
+
+userReview.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const newReview = event.target['user-review'].value
+    const newReviewLi = document.createElement('li')
+    newReviewLi.textContent = newReview
+    reviewsLoc.append(newReviewLi)
+    selectedBook.user_review = newReview
+})
