@@ -37,8 +37,8 @@ body {
 }
 
 #book-list img {
-    width: 100px;
-    height: auto;
+    width: auto;
+    height: 200px;
     margin: 7px;
 }
 
@@ -128,4 +128,8 @@ input[type=submit] {
     width: 500px;
     margin-left: 20px;
     padding: 15px;
+}
+
+#review-list{
+    list-style-type: none;
 }
