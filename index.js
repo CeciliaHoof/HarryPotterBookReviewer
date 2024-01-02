@@ -1,17 +1,14 @@
 //global variables
+const baseURL = "http://localhost:3000/books/";
 let selectedBook;
 let userRating;
 
-fetch('http://localhost:3000/books/')
+fetch(baseURL)
     .then(resp => resp.json())
     .then(data => {
         renderBooks(data);
         displayBook(data[0])
     })
-
-fetch('http://localhost:3000/reviews/')
-    .then(resp => resp.json())
-    .then(data => console.log(data))
 
 //DOM locations 
 const bookListLoc = document.querySelector('#book-list');
@@ -34,11 +31,7 @@ const boltFive = document.querySelector('#bolt-5');
 
 
 function renderBooks(bookData){
-
-    
-
     bookData.forEach(book => {
-
         //adds book cover to book list
         const bookImg = document.createElement('img');
         bookImg.src = book.cover;
@@ -77,7 +70,11 @@ function displayBook(book){
             summaryLoc.innerText = book.summary;
             ratingLoc.innerText = `Average Rating: ${book.rating} out of 5`;
             selectedBook = book;
-            //console.log(selectedBook);
+            let id = selectedBook.id;
+            
+            fetch(`${baseURL}${id}`)
+                .then(resp => resp.json())
+                .then(data => renderReviews(data.reviews))
 
             userRating = selectedBook.user_rating;
             if (userRating === 0){
@@ -105,16 +102,21 @@ function displayBook(book){
 }
         
 function renderReviews(reviewArr){
+    removeAllChildren(reviewsLoc);
     reviewArr.forEach(review => {
-        let id = selectedBook.id;
-        if (review.bookId === id){
             const reviewLi = document.createElement('li');
+            const br = document.createElement('br');
             reviewLi.textContent = review.content;
-            document.appendChild(reviewLi)
-        }
+            reviewsLoc.appendChild(reviewLi);
+            reviewsLoc.appendChild(br)
+            
     })
 }
-
+function removeAllChildren(parent){
+        while(parent.firstChild){
+            parent.removeChild(parent.firstChild);
+        }
+    }
 
 //Lightening Bolt Handler:
 boltOne.addEventListener('click', () => fillBolts(boltOne));
