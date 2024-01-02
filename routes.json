@@ -1,0 +1,4 @@
+{
+    "/books/:id": "/books/:id?_embed=reviews"
+}
+  
