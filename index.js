@@ -58,15 +58,13 @@ function renderBooks(bookData){
 
 //functions to highlight elements while moused over
 function highlightElement(elem){
-    //elem.src = 'https://www.wizardingworld.com/images/products/books/UK/rectangle-1.jpg'
-    elem.style.height = '250px'
-    elem.style.margin = '0px'
+    elem.style.height = '250px';
+    elem.style.margin = '0px';
     elem.style.border = '10px solid #F0EAD6';
 }
 function removeHighlight(elem){
-    //elem.src = 'https://www.wizardingworld.com/images/products/books/UK/rectangle-2.jpg'
-    elem.style.height = '200px'
-    elem.style.margin = '7px'
+    elem.style.height = '200px';
+    elem.style.margin = '7px';
     elem.style.border = '0px';
 }
 
