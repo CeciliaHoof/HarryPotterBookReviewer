@@ -46,8 +46,30 @@ function renderBooks(bookData){
 
         //adds click event on each element in book list to display clicked book
         bookImg.addEventListener('click', () => displayBook(book));
-    })
+
+        //adds event listener to handle highlighting book covers when moused over
+
+        bookImg.addEventListener('mouseover', () => highlightElement(bookImg));
+        bookImg.addEventListener('mouseleave', () => removeHighlight(bookImg));
+        
+
+   })
 }
+
+//functions to highlight elements while moused over
+function highlightElement(elem){
+    //elem.src = 'https://www.wizardingworld.com/images/products/books/UK/rectangle-1.jpg'
+    elem.style.height = '250px'
+    elem.style.margin = '0px'
+    elem.style.border = '10px solid #F0EAD6';
+}
+function removeHighlight(elem){
+    //elem.src = 'https://www.wizardingworld.com/images/products/books/UK/rectangle-2.jpg'
+    elem.style.height = '200px'
+    elem.style.margin = '7px'
+    elem.style.border = '0px';
+}
+
 
 function displayBook(book){
             coverLoc.src = book.cover;
@@ -146,4 +168,6 @@ function fillBolts(bolt){
     }
     selectedBook.user_rating = userRating;
 }
+
+
 
