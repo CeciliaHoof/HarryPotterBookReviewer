@@ -10,6 +10,7 @@ fetch(baseURL)
         displayBook(data[0])
     })
 
+
 //DOM locations 
 const bookListLoc = document.querySelector('#book-list');
 
@@ -21,6 +22,8 @@ const summaryLoc = document.querySelector('#summary');
 const ratingLoc = document.querySelector('#rating');
 const userRatingLoc = document.querySelector('#user-rating');
 const reviewsLoc = document.querySelector('#review-list');
+const userReview = document.querySelector('form')
+
 
 const boltOne = document.querySelector('#bolt-1');
 const boltTwo = document.querySelector('#bolt-2');
@@ -108,9 +111,13 @@ function renderReviews(reviewArr){
             const br = document.createElement('br');
             reviewLi.textContent = review.content;
             reviewsLoc.appendChild(reviewLi);
-            reviewsLoc.appendChild(br)
-            
-    })
+            reviewsLoc.appendChild(br)     
+     })
+    const newUserReview =  selectedBook.user_review;
+    const newUserReviewLi = document.createElement('li');
+    newUserReviewLi.textContent = newUserReview;
+    reviewsLoc.appendChild(newUserReviewLi);
+    
 }
 function removeAllChildren(parent){
         while(parent.firstChild){
@@ -170,4 +177,18 @@ function fillBolts(bolt){
 }
 
 
+
+//Review Submission
+
+userReview.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const newReview = event.target['user-review'].value
+    const newReviewLi = document.createElement('li')
+    newReviewLi.textContent = newReview
+    reviewsLoc.append(newReviewLi)
+    selectedBook.user_review = newReview
+})         
+            
+ 
+  
 
