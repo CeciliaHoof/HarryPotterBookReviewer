@@ -7,7 +7,8 @@
             "pages": 223,
             "cover": "https://www.wizardingworld.com/images/products/books/UK/rectangle-1.jpg",
             "summary": "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter is a wizard, and he has a place at Hogwarts School of Witchcraft and Wizardry. An incredible adventure is about to begin!",
-            "rating":4.47
+            "rating":4.47,
+            "user_rating":0
         },
         {
             "id": 2,
@@ -16,7 +17,8 @@
             "pages":251,
             "cover":"https://www.wizardingworld.com/images/products/books/UK/rectangle-2.jpg",
             "summary":"Harry Potter's summer has included the worst birthday ever, doomy warnings from a house-elf called Dobby, and rescue from the Dursleys by his friend Ron Weasley in a magical flying car! Back at Hogwarts School of Witchcraft And Wizardry for his second year, Harry hears strange whispers echo through empty corridors – and then the attacks start. Students are found as though turned to stone... Dobby's sinister predictions seem to be coming true.",
-            "rating":4.43
+            "rating":4.43,
+            "user_rating":0
         },
         {
             "id": 3,
@@ -25,7 +27,8 @@
             "pages":317,
             "cover":"https://www.wizardingworld.com/images/products/books/UK/rectangle-3.jpg",
             "summary":"When the Knight Bus crashes through the darkness and screeches to a halt in front of him, it's the start of another far from ordinary year at Hogwarts for Harry Potter. Sirius Black, escaped mass-murderer and follower of Lord Voldemort, is on the run – and they say he is coming after Harry. In his first ever Divination class, Professor Trelawney sees an omen of death in Harry's tea leaves... But perhaps most terrifying of all are the Dementors patrolling the school grounds, with their soul-sucking kiss.",
-            "rating":4.58
+            "rating":4.58,
+            "user_rating":0
         },
         {
             "id":4,
@@ -34,7 +37,8 @@
             "pages":636,
             "cover":"https://www.wizardingworld.com/images/products/books/UK/rectangle-4.jpg",
             "summary":"The Triwizard Tournament is to be held at Hogwarts. Only wizards who are over seventeen are allowed to enter – but that doesn't stop Harry dreaming that he will win the competition. Then at Hallowe'en, when the Goblet of Fire makes its selection, Harry is amazed to find his name is one of those that the magical cup picks out. He will face death-defying tasks, dragons and Dark wizards, but with the help of his best friends, Ron and Hermione, he might just make it through – alive!",
-            "rating":4.56
+            "rating":4.56,
+            "user_rating":0
         },
         {
             "id":5,
@@ -43,24 +47,28 @@
             "pages":766,
             "cover":"https://www.wizardingworld.com/images/products/books/UK/rectangle-5.jpg",
             "summary":"Dark times have come to Hogwarts. After the Dementors' attack on his cousin Dudley, Harry Potter knows that Voldemort will stop at nothing to find him. There are many who deny the Dark Lord's return, but Harry is not alone: a secret Order gathers at Grimmauld Place to fight against the Dark forces. Harry must allow Professor Snape to teach him how to protect himself from Voldemort's savage assaults on his mind. But they are growing stronger by the day and Harry is running out of time.",
-            "rating":4.5},
+            "rating":4.5,
+            "user_rating":0
+        },
         {
             "id":6,
             "title":"Harry Potter and the Half-Blood Prince",
-            "release_date":"July 16, 2005",
+            "released":"July 16, 2005",
             "pages":607,
             "cover":"https://www.wizardingworld.com/images/products/books/UK/rectangle-6.jpg",
             "summary":"When Dumbledore arrives at Privet Drive one summer night to collect Harry Potter, his wand hand is blackened and shrivelled, but he does not reveal why. Secrets and suspicion are spreading through the wizarding world, and Hogwarts itself is not safe. Harry is convinced that Malfoy bears the Dark Mark: there is a Death Eater amongst them. Harry will need powerful magic and true friends as he explores Voldemort's darkest secrets, and Dumbledore prepares him to face his destiny.",
-            "rating":4.58
+            "rating":4.58,
+            "user_rating":0
         },
         {
             "id":7,
             "title":"Harry Potter and the Deathly Hallows",
-            "release_date":"July 7, 2007",
+            "released":"July 7, 2007",
             "pages":610,
             "cover":"https://www.wizardingworld.com/images/products/books/UK/rectangle-7.jpg",
             "summary":"As he climbs into the sidecar of Hagrid's motorbike and takes to the skies, leaving Privet Drive for the last time, Harry Potter knows that Lord Voldemort and the Death Eaters are not far behind. The protective charm that has kept Harry safe until now is broken, but he cannot keep hiding. The Dark Lord is breathing fear into everything Harry loves, and to stop him Harry will have to find and destroy the remaining Horcruxes. The final battle must begin – Harry must stand and face his enemy.",
-            "rating":4.62
+            "rating":4.62,
+            "user_rating":0
         }
     ],
     "reviews" : [
@@ -98,6 +106,41 @@
             "id": 7,
             "bookId": 7,
             "content": "What a conclusion! There were definitely some parts that felt like they were moving a little slowly, but wow, there was still a lot of action! I feel like I can happily leave the wizarding world knowing all is well."
+        },
+        {
+            "id": 8,
+            "bookId": 1,
+            "content": "The magical introduction to the wizarding world brims with wonder as Harry discovers his heritage and battles the forces of evil in a captivating adventure for all ages."
+        },
+        {
+            "id": 9,
+            "bookId": 2,
+            "content": "Rowling continues to enchant readers with a darker mystery and deeper exploration of Hogwarts, intertwining humor and danger flawlessly."
+        },
+        {
+            "id": 10,
+            "bookId": 3,
+            "content": "Delving into Harry's past, this installment presents a thrilling narrative filled with revelations, showcasing the complexity of good and evil in a world of wizardry."
+        },
+        {
+            "id": 11,
+            "bookId": 4,
+            "content": "Rowling masterfully balances growing up and the encroaching darkness as the series takes a darker turn, plunging readers into a mesmerizing tale of danger and deceit."
+        },
+        {
+            "id": 12,
+            "bookId": 5,
+            "content": "With themes of rebellion and loss, this book navigates Harry's tumultuous emotions while expanding the wizarding world's lore, setting the stage for an epic showdown."
+        },
+        {
+            "id": 13,
+            "bookId": 6,
+            "content": "Unveiling secrets and exploring the complexities of characters, this installment intensifies the series' stakes, leading to heart-wrenching moments and unexpected alliances."
+        },
+        {
+            "id": 14,
+            "bookId": 7,
+            "content": "Culminating in an epic battle between good and evil, this concluding book ties up loose ends while delivering an emotionally charged and satisfying conclusion to an iconic series."
         }
       ]
 }
