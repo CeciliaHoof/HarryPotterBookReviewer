@@ -2,7 +2,9 @@
 const baseURL = "http://localhost:3000/books/";
 let selectedBook;
 let userRating;
+let btnClick = 0;
 
+//fetch
 fetch(baseURL)
     .then(resp => resp.json())
     .then(data => {
@@ -24,14 +26,22 @@ const userRatingLoc = document.querySelector('#user-rating');
 const reviewsLoc = document.querySelector('#review-list');
 const userReview = document.querySelector('form')
 
-
 const boltOne = document.querySelector('#bolt-1');
 const boltTwo = document.querySelector('#bolt-2');
 const boltThree = document.querySelector('#bolt-3');
 const boltFour = document.querySelector('#bolt-4');
 const boltFive = document.querySelector('#bolt-5');
 
-
+const dropdown = document.querySelector('.dropbtn')
+const dropdownContent = document.querySelector('.dropdown-content')
+const header = document.querySelector('header')
+const h1 = document.querySelector('h1')
+const label = document.querySelector('label')
+const submitBtn = document.querySelector('#submit')
+const gryffindor = document.querySelector("#gryf")
+const slytherin = document.querySelector('#slyth')
+const hufflepuff = document.querySelector('#huff')
+const ravenclaw = document.querySelector('#raven')
 
 function renderBooks(bookData){
     bookData.forEach(book => {
@@ -188,7 +198,72 @@ userReview.addEventListener('submit', (event) => {
     reviewsLoc.append(newReviewLi)
     selectedBook.user_review = newReview
 })         
-            
- 
-  
 
+//Dropdown
+dropdown.addEventListener('click', showHouses)
+function showHouses(){
+    if(btnClick % 2 == 0){
+        dropdownContent.style.display = "block";
+        btnClick++;
+    }
+    else{
+        dropdownContent.style.display = "none";
+        btnClick++;
+    }
+}
+
+gryffindor.addEventListener('click', () => changeColors(gryffindor))
+slytherin.addEventListener('click', () => changeColors(slytherin))
+hufflepuff.addEventListener('click', () => changeColors(hufflepuff))
+ravenclaw.addEventListener('click', () => changeColors(ravenclaw))
+
+function changeColors(house){
+    if(house.id === "gryf")
+    {
+        bookListLoc.style.backgroundColor = "#7F0909";
+        document.body.style.backgroundColor = "#DAA520";
+        header.style.backgroundColor = "#7F0909";
+        h1.style.color = "#DAA520";
+        userReview.style.backgroundColor = "#7F0909";
+        label.style.backgroundColor = '#DAA520';
+        label.style.color = "#311D00"
+        submitBtn.style.backgroundColor = '#DAA520';
+        submitBtn.style.color = "#311D00"
+    }
+    if(house.id === "slyth")
+    {
+        bookListLoc.style.backgroundColor = "#1A472A";
+        document.body.style.backgroundColor = "#AAAAAA";
+        header.style.backgroundColor = "#1A472A";
+        h1.style.color = "#AAAAAA";
+        userReview.style.backgroundColor = "#1A472A";
+        label.style.backgroundColor = '#AAAAAA';
+        label.style.color = "#000000"
+        submitBtn.style.backgroundColor = '#AAAAAA';
+        submitBtn.style.color = "#000000"
+    }
+    if(house.id === "huff")
+    {
+        bookListLoc.style.backgroundColor = "#000000";
+        document.body.style.backgroundColor = "#FFD700";
+        header.style.backgroundColor = "#000000";
+        h1.style.color = "#FFD700";
+        userReview.style.backgroundColor = "#000000";
+        label.style.backgroundColor = '#FFD700';
+        label.style.color = "#000000"
+        submitBtn.style.backgroundColor = '#FFD700';
+        submitBtn.style.color = "#000000"
+    }
+    if(house.id === "raven")
+    {
+        bookListLoc.style.backgroundColor = "#223164";
+        document.body.style.backgroundColor = "#946B2D";
+        header.style.backgroundColor = "#223164";
+        h1.style.color = "#946B2D";
+        userReview.style.backgroundColor = "#223164";
+        label.style.backgroundColor = '#946B2D';
+        label.style.color = "#000000"
+        submitBtn.style.backgroundColor = '#946B2D';
+        submitBtn.style.color = "#000000"
+    }
+}
