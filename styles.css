@@ -11,7 +11,7 @@
 }
 
 header{
-    height: 100px;
+    height: auto;
     background-color: #003366;
     justify-content: center;
 }
@@ -23,6 +23,30 @@ h1 {
     font-size: 48px;
     /* padding-top: 20px; */
 }
+
+.dropbtn{
+    background-color: #DAA520;
+    color: #003366;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.dropdown{
+    text-align: center;
+}
+
+.dropdown-content{
+    display: none;
+    background-color: #DAA520;
+    color: #003366;
+    font-family: 'Bebas Neue';
+}
+
+.dropdown-content li:hover{
+    background-color: #B87333;
+}
+
 body {
     background-color: #F0EAD6;
     color: #5F5F5F;
