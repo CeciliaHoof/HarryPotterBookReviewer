@@ -121,7 +121,7 @@ function renderReviews(reviewArr){
             const br = document.createElement('br');
             reviewLi.textContent = review.content;
             reviewsLoc.appendChild(reviewLi);
-            reviewsLoc.appendChild(br)     
+            reviewsLoc.appendChild(br);    
      })
     const newUserReview =  selectedBook.user_review;
     const newUserReviewLi = document.createElement('li');
@@ -184,6 +184,7 @@ function fillBolts(bolt){
         userRating = 5;
     }
     selectedBook.user_rating = userRating;
+    patchBook(selectedBook);
 }
 
 
@@ -196,9 +197,40 @@ userReview.addEventListener('submit', (event) => {
     const newReviewLi = document.createElement('li')
     newReviewLi.textContent = newReview
     reviewsLoc.append(newReviewLi)
-    selectedBook.user_review = newReview
+    //adds break after review
+    reviewsLoc.append(document.createElement('br'))
+    
+    selectedBook.user_review = newReview //what does this do?
+    //communicates with server to allow new review to persist
+    const newReviewObj = {
+        'bookId' : selectedBook.id,
+        'content' : newReview,
+    }
+    postReview(newReviewObj);
+    
+    userReview.reset()
 })         
 
+//adds review to review json
+function postReview(reviewObj){
+    fetch('http://localhost:3000/reviews', {
+        method: 'POST',
+        headers: {
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify(reviewObj)
+    })
+}
+
+function patchBook(bookObj){
+    fetch(`${baseURL}${bookObj.id}`, {
+        method : 'PATCH',
+        headers : {'content-type' : 'application/json'},
+        body : JSON.stringify(selectedBook)
+    })
+}
+
+//house themes
 //Dropdown
 dropdown.addEventListener('click', showHouses)
 function showHouses(){
