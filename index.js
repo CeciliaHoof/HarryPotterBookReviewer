@@ -23,6 +23,7 @@ function fetchCurriculum(url){
 //DOM locations
 const bookListLoc = document.querySelector("#book-list");
 
+//selectors related to book display
 const coverLoc = document.querySelector("#detail-image");
 const titleLoc = document.querySelector("#title");
 const yearReleasedLoc = document.querySelector("#year-released");
@@ -71,7 +72,6 @@ function renderBooks(bookData) {
     bookImg.addEventListener("click", () => displayBook(book));
 
     //adds event listener to handle highlighting book covers when moused over
-
     bookImg.addEventListener("mouseover", () => highlightElement(bookImg));
     bookImg.addEventListener("mouseleave", () => removeHighlight(bookImg));
   });
@@ -134,7 +134,7 @@ function removeAllChildren(parent) {
   }
 }
 
-//functions to highlight elements while moused over
+//functions to highlight elements in book nav while moused over
 function highlightElement(elem) {
     elem.style.height = "250px";
     elem.style.margin = "0px";
@@ -204,7 +204,7 @@ userReview.addEventListener('submit', (event) => {
     //adds break after review
     reviewsLoc.append(document.createElement('br'))
     
-    selectedBook.user_review = newReview //what does this do?
+    selectedBook.user_review = newReview
     //communicates with server to allow new review to persist
     const newReviewObj = {
         'bookId' : selectedBook.id,
@@ -215,7 +215,7 @@ userReview.addEventListener('submit', (event) => {
     userReview.reset()
 })         
 
-//adds review to review json
+//posts submitted review to server
 function postReview(reviewObj){
     fetch('http://localhost:3000/reviews', {
         method: 'POST',
@@ -226,6 +226,7 @@ function postReview(reviewObj){
     })
 }
 
+//patches changes to selected book to server
 function patchBook(bookObj){
     fetch(`${baseURL}${bookObj.id}`, {
         method : 'PATCH',
@@ -234,7 +235,7 @@ function patchBook(bookObj){
     })
 }
 
-//Dropdown
+//Dropdown to select 'house' page theme
 dropdown.addEventListener("click", showHouses);
 function showHouses() {
   if (btnClick % 2 == 0) {
@@ -251,6 +252,7 @@ slytherin.addEventListener("click", () => changeColors(slytherin));
 hufflepuff.addEventListener("click", () => changeColors(hufflepuff));
 ravenclaw.addEventListener("click", () => changeColors(ravenclaw));
 
+//changes the website color scheme based on user selected 'house'
 function changeColors(house) {
   if (house.id === "gryf") {
     bookListLoc.style.backgroundColor = "#7F0909";
