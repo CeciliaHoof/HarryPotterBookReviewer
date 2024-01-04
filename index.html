@@ -9,6 +9,17 @@
 <body>
     <header>
         <h1>Harry Potter Book Reviewer</h1>
+        <div class="dropdown">
+          <button class="dropbtn">Select Your Hogwarts House</button>
+          <div id="houses" class="dropdown-content">
+            <ul>
+            <li id="gryf">Gryffindor</li>
+            <li id="slyth">Slytherin</li>
+            <li id="huff">Hufflepuff</li>
+            <li id="raven">Ravenclaw</li>
+            </ul>
+          </div>
+        </div>
     </header>
     
     <nav id="book-list">
@@ -42,11 +53,22 @@
         <input id="submit" type="submit">
       </form>
       <div id="review-display">
-        <h4> Reviews: </h4>
+        <h3> Reviews: </h3>
         <br>
         <ul id="review-list">
 
         </ul>
+      </div>
+    </div>
+
+    <div id = "spells">
+      <div id="spells-display">
+        <h3 id = "spell-book">Spell Book</h3>
+        <br>
+        <p>The following are a list of spells learned this school year.<br>Match the spells by dragging the action to the incantation that preforms it.</p>
+        <br>
+        <div id = "incantations"></div>
+        <div id = "actions"></div>
       </div>
     </div>
            

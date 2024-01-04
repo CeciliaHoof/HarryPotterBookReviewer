@@ -11,7 +11,7 @@
 }
 
 header{
-    height: 100px;
+    height: auto;
     background-color: #003366;
     justify-content: center;
 }
@@ -23,6 +23,30 @@ h1 {
     font-size: 48px;
     /* padding-top: 20px; */
 }
+
+.dropbtn{
+    background-color: #DAA520;
+    color: #003366;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.dropdown{
+    text-align: center;
+}
+
+.dropdown-content{
+    display: none;
+    background-color: #DAA520;
+    color: #003366;
+    font-family: 'Bebas Neue';
+}
+
+.dropdown-content li:hover{
+    background-color: #B87333;
+}
+
 body {
     background-color: #F0EAD6;
     color: #5F5F5F;
@@ -63,6 +87,7 @@ body {
 #book-info h4{
     text-align: center;
 }
+
 #title {
     color: #DAA520;
     font-family: 'ParryHotter', Arial, Helvetica, sans-serif;
@@ -93,6 +118,7 @@ label{
     background-color: #003366;
     color: #B87333
 }
+
 textarea {
     display: inline-block;
     border: 0;
@@ -130,6 +156,62 @@ input[type=submit] {
     padding: 15px;
 }
 
+#review-display h3{
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+}
+
 #review-list{
     list-style-type: none;
 }
+
+#spells{
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+#spells-display{
+    width:780px;
+    background-color: #D9D4CA;
+    padding: 15px;
+    display: inline;
+
+}
+
+#spells-display h3 {
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    
+}
+
+#spells-display p {
+    text-align: center;
+    font-size: 16px;
+}
+
+.incantation {
+    float: left;
+    width: 160px;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#actions {
+    margin-top: 100px;
+}
+
+.action {
+    float: left;
+    width: 160px;
+    height: 60px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+

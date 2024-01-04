@@ -142,5 +142,31 @@
             "bookId": 7,
             "content": "Culminating in an epic battle between good and evil, this concluding book ties up loose ends while delivering an emotionally charged and satisfying conclusion to an iconic series."
         }
-      ]
+    ],
+    "spells" : {
+        "Standard Book of Spells, Grade 1" : [
+            {
+                "id": 1,
+                "incantation": "Alohomora",
+                "action": "unlocks things (for example, a door)"
+            },
+            {
+                "id": 2,
+                "incantation": "Lumos",
+                "action": "illuminates the tip of the caster's wand"
+            },
+            {
+                "id": 3,
+                "bookId": 1,
+                "incantation": "Wingardium Leviosa",
+                "action": "levitates an object"
+            },
+            {
+                "id": 4,
+                "bookId": 1,
+                "incantation": "Reparo",
+                "action": "repairs a broken object"
+            }
+        ]
+    }
 }
