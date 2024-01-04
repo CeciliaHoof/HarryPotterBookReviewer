@@ -7,6 +7,7 @@ let btnClick = 0;
 let draggedAction;
 
 //initial fetch and other fetch functions
+
 fetch(baseURL)
     .then((resp) => resp.json())
     .then((data) => {
@@ -57,8 +58,6 @@ const answersLoc = document.querySelector("#answers");
 const actionsLoc = document.querySelector("#actions");
 const currDisplay = document.querySelector("#curriculum-display");
 const congratulations = document.querySelector("#congrats");
-
-
 
 //Render functions
 function renderBooks(bookData) {
@@ -192,17 +191,48 @@ function fillBolts(bolt) {
     userRating = 5;
   }
   selectedBook.user_rating = userRating;
+  patchBook(selectedBook);
 }
 
 //Review Submission
-userReview.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const newReview = event.target["user-review"].value;
-  const newReviewLi = document.createElement("li");
-  newReviewLi.textContent = newReview;
-  reviewsLoc.append(newReviewLi);
-  selectedBook.user_review = newReview;
-});
+userReview.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const newReview = event.target['user-review'].value
+    const newReviewLi = document.createElement('li')
+    newReviewLi.textContent = newReview
+    reviewsLoc.append(newReviewLi)
+    //adds break after review
+    reviewsLoc.append(document.createElement('br'))
+    
+    selectedBook.user_review = newReview //what does this do?
+    //communicates with server to allow new review to persist
+    const newReviewObj = {
+        'bookId' : selectedBook.id,
+        'content' : newReview,
+    }
+    postReview(newReviewObj);
+    
+    userReview.reset()
+})         
+
+//adds review to review json
+function postReview(reviewObj){
+    fetch('http://localhost:3000/reviews', {
+        method: 'POST',
+        headers: {
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify(reviewObj)
+    })
+}
+
+function patchBook(bookObj){
+    fetch(`${baseURL}${bookObj.id}`, {
+        method : 'PATCH',
+        headers : {'content-type' : 'application/json'},
+        body : JSON.stringify(selectedBook)
+    })
+}
 
 //Dropdown
 dropdown.addEventListener("click", showHouses);
@@ -277,13 +307,11 @@ function renderCurriculum(curriculumArr){
     let currArr = [];
     const examTitle = "Welcome to the End of Term Exams, Year"
     exam.textContent = `${examTitle} ${selectedBook.id}`;
-    
     currArr = curriculumArr[selectedBook.id - 1];
-        currArr.forEach(element => renderAnswers(element))
+    currArr.forEach(element => renderAnswers(element))
         
-        shuffleArr(currArr)
-        
-        currArr.forEach(element => renderActions(element))
+    shuffleArr(currArr)
+    currArr.forEach(element => renderActions(element))
 }
 
 function renderAnswers(subject){
@@ -339,8 +367,7 @@ function dragHandler(e){
         actionsLoc.removeChild(draggedAction)
     }
 
-    if (actionsLoc.childElementCount === 0)
-    {
+    if (actionsLoc.childElementCount === 0){
         if (selectedBook.id === 7){
           congratulations.textContent = "Congratulations! You are an official graduate of Hogwarts School of Witchcraft and Wizardry! Good luck in your future endeavors!"
           currDisplay.appendChild(congratulations);
