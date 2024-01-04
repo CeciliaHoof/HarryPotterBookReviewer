@@ -36,3 +36,5 @@
 - API/Database : <a href="https://potterdb.com/" target="_blank">Potter DB</a>
 - Harry Potter Wiki: <a href="https://harrypotter.fandom.com/wiki/Main_Page" target="_blank">Harry Potter Wiki</a>
 
+
+Lightening Bolts sourced from <a href="https://www.freepik.com/icon/flash_252590#fromView=resource_detail&position=8">Icon by Smashicons</a>

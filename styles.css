@@ -87,6 +87,7 @@ body {
 #book-info h4{
     text-align: center;
 }
+
 #title {
     color: #DAA520;
     font-family: 'ParryHotter', Arial, Helvetica, sans-serif;
@@ -117,6 +118,7 @@ label{
     background-color: #003366;
     color: #B87333
 }
+
 textarea {
     display: inline-block;
     border: 0;
@@ -154,6 +156,63 @@ input[type=submit] {
     padding: 15px;
 }
 
+#review-display h3{
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+}
+
 #review-list{
     list-style-type: none;
 }
+
+#curriculum{
+    display: flex;
+    height: 450px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+#curriculum-display{
+    width:780px;
+    background-color: #D9D4CA;
+    padding: 15px;
+    display: inline;
+
+}
+
+#curriculum-display h3 {
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    display: block;
+    
+}
+
+#curriculum-display p {
+    text-align: center;
+    font-size: 16px;
+}
+
+.answers {
+    float: left;
+    width: 160px;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#actions {
+    margin-top: 160px;
+}
+
+.action {
+    float: left;
+    width: 160px;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
