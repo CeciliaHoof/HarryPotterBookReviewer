@@ -1,4 +1,4 @@
-##Harry Potter Book Review
+## Harry Potter Book Review
 
 <img width="1440" alt="Screenshot 2024-01-04 at 11 36 33 AM" src="https://github.com/Michaelp720/HarryPotterBookReviewer/assets/82983831/ca7040b3-6e29-4308-bdb2-e5f5d38c7be2">
 
