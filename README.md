@@ -12,15 +12,27 @@
 
 ## Engineers:
 
-**Ceclia**
-- Github:
+**Ceclia Chimento**
+- Github: <a href="">Cecilia Chimento</a><br>
 - Email: ccchimento@gmail.com
 
-**Micheal Pile**
-- Github:
-- Email:
+**Michael Pile**
+- Github: <a href="https://github.com/Michaelp720">Michaelp720</a><br>
+- Email: mjpile@gmail.com
  
 **Isaiah Aguilera**
-- Github: <a href="https://github.com/IsaiahCoding">Isaiah Aguilera</a><br>
+- Github: <a href="https://github.com/IsaiahCoding">IsaiahCoding</a><br>
 - Email: <a href="mailto:IaguileraCFE@gmail.com">IaguileraCFE@gmail.com</a>
+
+## Demo
+
+
+## Tech Stack
+- JavaScript
+- CSS
+- HTML
+
+## Sources
+- API :
+- Harry Potter Wiki:
 
