@@ -165,14 +165,14 @@ input[type=submit] {
     list-style-type: none;
 }
 
-#spells{
+#curriculum{
     display: flex;
-    height: 400px;
+    height: 450px;
     justify-content: center;
     margin-top: 25px;
 }
 
-#spells-display{
+#curriculum-display{
     width:780px;
     background-color: #D9D4CA;
     padding: 15px;
@@ -180,18 +180,19 @@ input[type=submit] {
 
 }
 
-#spells-display h3 {
+#curriculum-display h3 {
     font-family: 'Bebas Neue', cursive;
     text-align: center;
+    display: block;
     
 }
 
-#spells-display p {
+#curriculum-display p {
     text-align: center;
     font-size: 16px;
 }
 
-.incantation {
+.answers {
     float: left;
     width: 160px;
     height: auto;
@@ -202,13 +203,13 @@ input[type=submit] {
 }
 
 #actions {
-    margin-top: 100px;
+    margin-top: 160px;
 }
 
 .action {
     float: left;
     width: 160px;
-    height: 60px;
+    height: auto;
     margin: 10px;
     padding: 10px;
     border: 1px solid black;

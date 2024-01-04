@@ -1,19 +1,24 @@
 //global variables
 const baseURL = "http://localhost:3000/books/";
-const spellsURL = "http://localhost:3000/spells/"
+const currURL = "http://localhost:3000/curriculum/"
 let selectedBook;
 let userRating;
 let btnClick = 0;
 let draggedAction;
 
-//fetch
+//initial fetch and other fetch functions
 fetch(baseURL)
-  .then((resp) => resp.json())
-  .then((data) => {
-    renderBooks(data);
-    displayBook(data[0]);
-  });
+    .then((resp) => resp.json())
+    .then((data) => {
+        renderBooks(data);
+        displayBook(data[0]);
+    });
 
+function fetchCurriculum(url){
+    fetch(url)
+    .then(resp => resp.json())
+    .then(data => renderCurriculum(data))
+}
 //DOM locations
 const bookListLoc = document.querySelector("#book-list");
 
@@ -47,10 +52,12 @@ const hufflepuff = document.querySelector("#huff");
 const ravenclaw = document.querySelector("#raven");
 
 //selectors related to spells
-const spellBook = document.querySelector("#spell-book")
-const incantationsLoc = document.querySelector("#incantations");
+const exam = document.querySelector("#exam")
+const answersLoc = document.querySelector("#answers");
 const actionsLoc = document.querySelector("#actions");
-const spellsDisplay = document.querySelector("#spells-display");
+const currDisplay = document.querySelector("#curriculum-display");
+const congratulations = document.querySelector("#congrats");
+
 
 
 //Render functions
@@ -72,37 +79,40 @@ function renderBooks(bookData) {
 }
 
 function displayBook(book) {
-  coverLoc.src = book.cover;
-  titleLoc.innerText = book.title;
-  yearReleasedLoc.innerText = book.released;
-  pageNumberLoc.innerText = `${book.pages} pages`;
-  summaryLoc.innerText = book.summary;
-  ratingLoc.innerText = `Average Rating: ${book.rating} out of 5`;
-  selectedBook = book;
-  let id = selectedBook.id;
+    coverLoc.src = book.cover;
+    titleLoc.innerText = book.title;
+    yearReleasedLoc.innerText = book.released;
+    pageNumberLoc.innerText = `${book.pages} pages`;
+    summaryLoc.innerText = book.summary;
+    ratingLoc.innerText = `Average Rating: ${book.rating} out of 5`;
+    selectedBook = book;
+    let id = selectedBook.id;
 
-  fetch(`${baseURL}${id}`)
-    .then((resp) => resp.json())
-    .then((data) => renderReviews(data.reviews));
+    fetch(`${baseURL}${id}`)
+        .then((resp) => resp.json())
+        .then((data) => renderReviews(data.reviews));
 
-  userRating = selectedBook.user_rating;
-  if (userRating === 0) {
-    boltOne.src = "unfilled-lightening-bolt.png";
-    boltTwo.src = "unfilled-lightening-bolt.png";
-    boltThree.src = "unfilled-lightening-bolt.png";
-    boltFour.src = "unfilled-lightening-bolt.png";
-    boltFive.src = "unfilled-lightening-bolt.png";
-  } else if (userRating === 1) {
-    fillBolts(boltOne);
-  } else if (userRating === 2) {
-    fillBolts(boltTwo);
-  } else if (userRating === 3) {
-    fillBolts(boltThree);
-  } else if (userRating === 4) {
-    fillBolts(boltFour);
-  } else if (userRating === 5) {
-    fillBolts(boltFive);
-  }
+    userRating = selectedBook.user_rating;
+    if (userRating === 0) {
+        boltOne.src = "unfilled-lightening-bolt.png";
+        boltTwo.src = "unfilled-lightening-bolt.png";
+        boltThree.src = "unfilled-lightening-bolt.png";
+        boltFour.src = "unfilled-lightening-bolt.png";
+        boltFive.src = "unfilled-lightening-bolt.png";
+    } else if (userRating === 1) {
+        fillBolts(boltOne);
+    } else if (userRating === 2) {
+        fillBolts(boltTwo);
+    } else if (userRating === 3) {
+        fillBolts(boltThree);
+    } else if (userRating === 4) {
+        fillBolts(boltFour);
+    } else if (userRating === 5) {
+        fillBolts(boltFive);
+    }
+
+    currDisplay.appendChild(congratulations)
+    fetchCurriculum(currURL)  
 }
 
 function renderReviews(reviewArr) {
@@ -259,38 +269,39 @@ function changeColors(house) {
 }
 
 //Spell Drag and Drop
-fetch(spellsURL)
-    .then(resp => resp.json())
-    .then(data => renderSpellBook(data))
+function renderCurriculum(curriculumArr){
+    removeAllChildren(answersLoc);
+    removeAllChildren(actionsLoc);
+    currDisplay.removeChild(congratulations)
 
-function renderSpellBook(spellBookObj){
-    let spellArr = [];
-    if (selectedBook.id === 1){
-        spellBook.textContent = "Standard Book of Spells, Grade 1";
-
-        spellArr = spellBookObj["Standard Book of Spells, Grade 1"];
-        spellArr.forEach(element => renderIncantations(element))
-        
-        shuffleArr(spellArr)
-        
-        spellArr.forEach(element => renderActions(element))
-    }
+    let currArr = [];
+    const examTitle = "Welcome to the End of Term Exams, Year"
+    exam.textContent = `${examTitle} ${selectedBook.id}`;
     
+    currArr = curriculumArr[selectedBook.id - 1];
+        currArr.forEach(element => renderAnswers(element))
+        
+        shuffleArr(currArr)
+        
+        currArr.forEach(element => renderActions(element))
 }
 
-function renderIncantations(spell){
-    const spellId = spell.id;
-    const incantationDiv = document.createElement('div');
-    incantationDiv.textContent = spell.incantation;
-    incantationDiv.classList.add("incantation");
-    incantationDiv.id = `incantation${spellId}`;
-    incantationsLoc.appendChild(incantationDiv);
+function renderAnswers(subject){
+  
+  const subjId = subject.id;
+  const answerDiv = document.createElement('div');
+  answerDiv.textContent = subject.answer;
+  answerDiv.classList.add("answers");
+  answerDiv.id = `answer${subjId}`;
+  answerDiv.title = subject.course;
+  answersLoc.appendChild(answerDiv);
+  
 
-    incantationDiv.addEventListener("dragover", (e) => {
-        e.preventDefault();},
-    false,)
+  answerDiv.addEventListener("dragover", (e) => {
+      e.preventDefault();},
+  false,)
 
-    incantationDiv.addEventListener('drop', dragHandler)
+  answerDiv.addEventListener('drop', dragHandler)
 }
 
 function renderActions(spell){
@@ -317,20 +328,26 @@ function shuffleArr(arr) {
 
 function dragHandler(e){
     e.preventDefault();
-    const incantationId = e.target.id.charAt(e.target.id.length - 1);
+    const answerId = e.target.id.charAt(e.target.id.length - 1);
     const actionId = draggedAction.id.charAt(draggedAction.id.length - 1);
 
-    if (incantationId === actionId){
-        e.target.textContent = `Correct! ${e.target.textContent} ${draggedAction.textContent}.`
+    if (answerId === actionId){
+        e.target.textContent = `Correct! ${e.target.textContent} ${draggedAction.textContent}. This subject was covered in ${e.target.title}.`
         e.target.style.backgroundColor = "#DAA520"
         e.target.style.color = "#311D00"
+        e.target.style.height = "160px"
         actionsLoc.removeChild(draggedAction)
     }
 
     if (actionsLoc.childElementCount === 0)
     {
-        const congratulations = document.createElement("h3")
-        congratulations.textContent = "Congratulations! You passed your end of year assessment! See you next term!"
-        spellsDisplay.appendChild(congratulations)
+        if (selectedBook.id === 7){
+          congratulations.textContent = "Congratulations! You are an official graduate of Hogwarts School of Witchcraft and Wizardry! Good luck in your future endeavors!"
+          currDisplay.appendChild(congratulations);
+        }
+        else {
+          congratulations.textContent = "Congratulations! You passed your end of year assessment! See you next term!"
+          currDisplay.appendChild(congratulations)
+        }
     }
 }
