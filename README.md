@@ -13,7 +13,7 @@
 ## Engineers:
 
 **Ceclia Chimento**
-- Github: <a href="">Cecilia Chimento</a><br>
+- Github: <a href="https://github.com/CeciliaHoof">CeciliaHoof</a><br>
 - Email: ccchimento@gmail.com
 
 **Michael Pile**
@@ -33,6 +33,6 @@
 - HTML
 
 ## Sources
-- API :
-- Harry Potter Wiki:
+- API/Database : <a href="https://potterdb.com/" target="_blank">Potter DB</a>
+- Harry Potter Wiki: <a href="https://harrypotter.fandom.com/wiki/Main_Page" target="_blank">Harry Potter Wiki</a>
 
