@@ -252,56 +252,21 @@ function showHouses() {
   }
 }
 
-gryffindor.addEventListener("click", () => changeColors(gryffindor));
-slytherin.addEventListener("click", () => changeColors(slytherin));
-hufflepuff.addEventListener("click", () => changeColors(hufflepuff));
-ravenclaw.addEventListener("click", () => changeColors(ravenclaw));
+gryffindor.addEventListener("click", () => changeColors("#7F0909", "#DAA520"));
+slytherin.addEventListener("click", () => changeColors("#1A472A", "#AAAAAA"));
+hufflepuff.addEventListener("click", () => changeColors("#000000", "#FFD700"));
+ravenclaw.addEventListener("click", () => changeColors("#223164", "#946B2D"));
 
-function changeColors(house) {
-  if (house.id === "gryf") {
-    bookListLoc.style.backgroundColor = "#7F0909";
-    document.body.style.backgroundColor = "#DAA520";
-    header.style.backgroundColor = "#7F0909";
-    h1.style.color = "#DAA520";
-    userReview.style.backgroundColor = "#7F0909";
-    label.style.backgroundColor = "#DAA520";
-    label.style.color = "#311D00";
-    submitBtn.style.backgroundColor = "#DAA520";
-    submitBtn.style.color = "#311D00";
-  }
-  if (house.id === "slyth") {
-    bookListLoc.style.backgroundColor = "#1A472A";
-    document.body.style.backgroundColor = "#AAAAAA";
-    header.style.backgroundColor = "#1A472A";
-    h1.style.color = "#AAAAAA";
-    userReview.style.backgroundColor = "#1A472A";
-    label.style.backgroundColor = "#AAAAAA";
-    label.style.color = "#000000";
-    submitBtn.style.backgroundColor = "#AAAAAA";
-    submitBtn.style.color = "#000000";
-  }
-  if (house.id === "huff") {
-    bookListLoc.style.backgroundColor = "#000000";
-    document.body.style.backgroundColor = "#FFD700";
-    header.style.backgroundColor = "#000000";
-    h1.style.color = "#FFD700";
-    userReview.style.backgroundColor = "#000000";
-    label.style.backgroundColor = "#FFD700";
-    label.style.color = "#000000";
-    submitBtn.style.backgroundColor = "#FFD700";
-    submitBtn.style.color = "#000000";
-  }
-  if (house.id === "raven") {
-    bookListLoc.style.backgroundColor = "#223164";
-    document.body.style.backgroundColor = "#946B2D";
-    header.style.backgroundColor = "#223164";
-    h1.style.color = "#946B2D";
-    userReview.style.backgroundColor = "#223164";
-    label.style.backgroundColor = "#946B2D";
-    label.style.color = "#000000";
-    submitBtn.style.backgroundColor = "#946B2D";
-    submitBtn.style.color = "#000000";
-  }
+function changeColors(color1, color2) {
+  bookListLoc.style.backgroundColor = color1;
+  document.body.style.backgroundColor = color2;
+  header.style.backgroundColor = color1;
+  h1.style.color = color2;
+  userReview.style.backgroundColor = color1;
+  label.style.backgroundColor = color2;
+  label.style.color = "#000000";
+  submitBtn.style.backgroundColor = color2;
+  submitBtn.style.color = "#000000";
 }
 
 //Spell Drag and Drop
