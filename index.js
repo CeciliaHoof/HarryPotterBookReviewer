@@ -360,9 +360,9 @@ function renderAnswers(subject) {
   answerDiv.addEventListener(
     "dragover",
     (e) => {
+      //prevents default, which allows "drop" event to occur
       e.preventDefault();
-    },
-    false
+    }
   );
 
   answerDiv.addEventListener("drop", dragHandler);
@@ -377,8 +377,9 @@ function renderActions(spell) {
   actionDiv.id = `action${spellId}`;
   actionsLoc.appendChild(actionDiv);
 
-  actionDiv.addEventListener("drag", (e) => {
-    draggedAction = e.target; //assigns the event target to a global variable to be used later in code
+  actionDiv.addEventListener("dragstart", (e) => {
+    //creates a reference to the dragged item by assigning the event target to a global variable
+    draggedAction = e.target;
   });
 }
 
@@ -389,11 +390,13 @@ function shuffleArr(arr) {
   }
 }
 
+//this is the function called by the drop event
 function dragHandler(e) {
   e.preventDefault();
   const answerId = e.target.id.charAt(e.target.id.length - 1);
   const actionId = draggedAction.id.charAt(draggedAction.id.length - 1);
 
+  //compares the id of the event target element to the id of the dragged element
   if (answerId === actionId) {
     e.target.textContent = `Correct! ${e.target.textContent} ${draggedAction.textContent}. This subject was covered in ${e.target.title}.`;
     e.target.style.backgroundColor = "#DAA520";
