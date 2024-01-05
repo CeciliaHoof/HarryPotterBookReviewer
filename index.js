@@ -1,6 +1,5 @@
 //global variables
 const baseURL = "http://localhost:3000/books/";
-const currURL = "http://localhost:3000/curriculum/";
 let selectedBook;
 let userRating;
 let btnClick = 0;
@@ -15,16 +14,14 @@ fetch(baseURL)
     displayBook(data[0]);
   });
 
-function fetchCurriculum(url) {
+  //fetches reviews and curriculum associate with each book
+function fetchEmbeddedData(url) {
   fetch(url)
     .then((resp) => resp.json())
-    .then((data) => renderCurriculum(data));
-}
-
-function fetchReviews(url) {
-  fetch(url)
-    .then((resp) => resp.json())
-    .then((data) => renderReviews(data.reviews));
+    .then((data) => {
+      renderCurriculum(data.curriculum)
+      renderReviews(data.reviews)
+    });
 }
 
 //adds review to review json
@@ -135,12 +132,12 @@ function displayBook(book) {
     fillBolts(boltFive);
   }
 
-  fetchReviews(`${baseURL}${id}`); //fetches and renders reviews
+  fetchEmbeddedData(`${baseURL}${id}`); //fetches and renders reviews
 
   //re-appending congratulations as it may have been previously removed(clicking from one book to the next without taking exam)
   currDisplay.appendChild(congratulations);
 
-  fetchCurriculum(currURL); //fetches and renders curriculum
+  //fetchCurriculum(`${baseURL}${id}`); //fetches and renders curriculum
 }
 
 function renderReviews(reviewArr) {
@@ -281,9 +278,6 @@ function renderCurriculum(curriculumArr) {
   const examTitle = "Welcome to Hogwarts End of Term Exams, Year";
   exam.textContent = `${examTitle} ${selectedBook.id}`;
 
-  let currArr = [];
-  currArr = curriculumArr[selectedBook.id - 1];
-
   if (selectedBook.exam_passed === true){
     if(selectedBook.id === 7){
       passMessage.textContent = "Congratulations! You are an official graduate of Hogwarts School of Witchcraft and Wizardry! Good luck in your future endeavors!";
@@ -291,16 +285,16 @@ function renderCurriculum(curriculumArr) {
     else{
       passMessage.textContent = "You have already passed this term's exam! Time to move on to harder subjects!";
     }
-    currArr.forEach((element) => renderAnswers(element));
+    curriculumArr.forEach((element) => renderAnswers(element));
   }
   else {
     currDisplay.removeChild(passMessage);
     
-    currArr.forEach((element) => renderAnswers(element));
+    curriculumArr.forEach((element) => renderAnswers(element));
 
-    shuffleArr(currArr); //shuffles array indexes, so that the actions do not render in the same order as the answers
+    shuffleArr(curriculumArr); //shuffles array indexes, so that the actions do not render in the same order as the answers
 
-    currArr.forEach((element) => renderActions(element));
+    curriculumArr.forEach((element) => renderActions(element));
   }
 }
 
