@@ -7,7 +7,8 @@
 - See all books in the saga
 - Read summaries of each book
 - Write their own review and submit to previous user reviews
-- Allows user to select their own house which changes the CSS style of the display page
+- To select their Hogwarts house which changes the CSS style of the display page
+- To test their knowledge of magical subjects
 
 
 ## Engineers:
