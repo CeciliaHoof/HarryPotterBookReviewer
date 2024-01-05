@@ -144,215 +144,201 @@
     }
   ],
   "curriculum": [
-    [
-      {
-        "id": 1,
-        "bookId": 1,
-        "answer": "Incendio",
-        "action": "conjures flames that can be used to set things on fire",
-        "course": "Herbology"
-      },
-      {
-        "id": 2,
-        "bookId": 1,
-        "answer": "Lumos",
-        "action": "illuminates the tip of the caster's wand",
-        "course": "Defense Against the Dark Arts"
-      },
-      {
-        "id": 3,
-        "bookId": 1,
-        "answer": "Wingardium Leviosa",
-        "action": "levitates an object",
-        "course": "Charms"
-      },
-      {
-        "id": 4,
-        "bookId": 1,
-        "answer": "Acusignis",
-        "action": "transfigures a match into a needle",
-        "course": "Transfiguration"
-      }
-    ],
-    [
-      {
-        "id": 1,
-        "bookId": 2,
-        "answer": "Rictusempra",
-        "action": "causes the target uncontrollable laughter",
-        "course": "Charms"
-      },
-      {
-        "id": 2,
-        "bookId": 2,
-        "answer": "Expelliarmus",
-        "action": "forces an opponent's wand from their hand",
-        "course": "Defense Against the Dark Arts"
-      },
-      {
-        "id": 3,
-        "bookId": 2,
-        "answer": "Vera Verto",
-        "action": "transfigures an animal into a goblet",
-        "course": "Transfiguration"
-      },
-      {
-        "id": 4,
-        "bookId": 2,
-        "answer": "Strengthening Solution",
-        "action": "grants extreme strength",
-        "course": "Potions"
-      }
-    ],
-    [
-      {
-        "id": 1,
-        "bookId": 3,
-        "answer": "Exhilaro",
-        "action": "makes your target feel elated. Warning: can be over overdone and cause fits of hysterical laughter",
-        "course": "Charms"
-      },
-      {
-        "id": 2,
-        "bookId": 3,
-        "answer": "Riddikulus",
-        "action": "forces a Boggart to take a funny form, causing laughter and banishing the Boggart",
-        "course": "Defense Against the Dark Arts"
-      },
-      {
-        "id": 3,
-        "bookId": 3,
-        "answer": "Mimbulus Mimbletonia",
-        "action": "produces Stinksap, which can be useful in caring for sick animals",
-        "course": "Herbology"
-      },
-      {
-        "id": 4,
-        "bookId": 3,
-        "answer": "Strigiforma",
-        "action": "transfigures an owl into a pair of opera glasses",
-        "course": "Transfiguration"
-      }
-    ],
-    [
-      {
-        "id": 1,
-        "bookId": 4,
-        "answer": "Accio",
-        "action": "summons a targeted object to the spell caster",
-        "course": "Charms"
-      },
-      {
-        "id": 2,
-        "bookId": 4,
-        "answer": "Reducto",
-        "action": "blasts solid objects to pieces",
-        "course": "Defense Against the Dark Arts"
-      },
-      {
-        "id": 3,
-        "bookId": 4,
-        "answer": "Orchideous",
-        "action": "conjures a bouquet of flowers from the caster's wand",
-        "course": "Transfiguration"
-      },
-      {
-        "id": 4,
-        "bookId": 4,
-        "answer": "Herbivicus",
-        "action": "rapidly increases a plant's growth rate, causes flowers to bloom",
-        "course": "Herbology"
-      }
-    ],
-    [
-      {
-        "id": 1,
-        "bookId": 5,
-        "answer": "Silencio",
-        "action": "renders the target temporarily mute",
-        "course": "Charms"
-      },
-      {
-        "id": 2,
-        "bookId": 5,
-        "answer": "Evanesco",
-        "action": "vanishes an object",
-        "course": "Transfiguration"
-      },
-      {
-        "id": 3,
-        "bookId": 5,
-        "answer": "Expecto Patronum",
-        "action": "conjures a force of positive energy to protect the caster from Dementors",
-        "course": "Defense Against the Dark Arts, unofficial curriculum"
-      },
-      {
-        "id": 4,
-        "bookId": 5,
-        "answer": "Dittany",
-        "action": "heals wounds by growing fresh skin over the injury",
-        "course": "Herbology"
-      }
-    ],
-    [
-      {
-        "id": 1,
-        "bookId": 6,
-        "answer": "Aguamenti",
-        "action": "conjures a stream of drinkable water from the tip of the caster's wand",
-        "course": "Charms"
-      },
-      {
-        "id": 2,
-        "bookId": 6,
-        "answer": "Protego",
-        "action": "protects the caster with an invisible shield that deflects both spells and objects",
-        "course": "Defense Against the Dark Arts"
-      },
-      {
-        "id": 3,
-        "bookId": 6,
-        "answer": "Crinus Muto",
-        "action": "transforms the color or style of the caster's hair",
-        "course": "Transfiguration"
-      },
-      {
-        "id": 4,
-        "bookId": 6,
-        "answer": "Draught of Living Death",
-        "action": "causes a deep sleep, similar to suspended animation",
-        "course": "Potions"
-      }
-    ],
-    [
-      {
-        "id": 1,
-        "bookId": 7,
-        "answer": "Impervius",
-        "action": "makes an object repel moisture",
-        "course": "Charms"
-      },
-      {
-        "id": 2,
-        "bookId": 7,
-        "answer": "Veritaserum",
-        "action": "forces the victim to answer all questions truthfully",
-        "course": "Potions"
-      },
-      {
-        "id": 3,
-        "bookId": 7,
-        "answer": "Bubotuber pus",
-        "action": "cures even the worst cases of acne",
-        "course": "Herbology, reviewed from a previous year"
-      },
-      {
-        "id": 4,
-        "bookId": 7,
-        "answer": "Bombarda Maxima",
-        "action": "causes a violent explosion",
-        "course": "Defense Against the Dark Arts"
-      }
-    ]
+    {
+      "id": 1,
+      "bookId": 1,
+      "answer": "Incendio",
+      "action": "conjures flames that can be used to set things on fire",
+      "course": "Herbology"
+    },
+    {
+      "id": 2,
+      "bookId": 1,
+      "answer": "Lumos",
+      "action": "illuminates the tip of the caster's wand",
+      "course": "Defense Against the Dark Arts"
+    },
+    {
+      "id": 3,
+      "bookId": 1,
+      "answer": "Wingardium Leviosa",
+      "action": "levitates an object",
+      "course": "Charms"
+    },
+    {
+      "id": 4,
+      "bookId": 1,
+      "answer": "Acusignis",
+      "action": "transfigures a match into a needle",
+      "course": "Transfiguration"
+    },
+    {
+      "id": 1,
+      "bookId": 2,
+      "answer": "Rictusempra",
+      "action": "causes the target uncontrollable laughter",
+      "course": "Charms"
+    },
+    {
+      "id": 2,
+      "bookId": 2,
+      "answer": "Expelliarmus",
+      "action": "forces an opponent's wand from their hand",
+      "course": "Defense Against the Dark Arts"
+    },
+    {
+      "id": 3,
+      "bookId": 2,
+      "answer": "Vera Verto",
+      "action": "transfigures an animal into a goblet",
+      "course": "Transfiguration"
+    },
+    {
+      "id": 4,
+      "bookId": 2,
+      "answer": "Strengthening Solution",
+      "action": "grants extreme strength",
+      "course": "Potions"
+    },
+    {
+      "id": 1,
+      "bookId": 3,
+      "answer": "Exhilaro",
+      "action": "makes your target feel elated. Warning: can be over overdone and cause fits of hysterical laughter",
+      "course": "Charms"
+    },
+    {
+      "id": 2,
+      "bookId": 3,
+      "answer": "Riddikulus",
+      "action": "forces a Boggart to take a funny form, causing laughter and banishing the Boggart",
+      "course": "Defense Against the Dark Arts"
+    },
+    {
+      "id": 3,
+      "bookId": 3,
+      "answer": "Mimbulus Mimbletonia",
+      "action": "produces Stinksap, which can be useful in caring for sick animals",
+      "course": "Herbology"
+    },
+    {
+      "id": 4,
+      "bookId": 3,
+      "answer": "Strigiforma",
+      "action": "transfigures an owl into a pair of opera glasses",
+      "course": "Transfiguration"
+    },
+    {
+      "id": 1,
+      "bookId": 4,
+      "answer": "Accio",
+      "action": "summons a targeted object to the spell caster",
+      "course": "Charms"
+    },
+    {
+      "id": 2,
+      "bookId": 4,
+      "answer": "Reducto",
+      "action": "blasts solid objects to pieces",
+      "course": "Defense Against the Dark Arts"
+    },
+    {
+      "id": 3,
+      "bookId": 4,
+      "answer": "Orchideous",
+      "action": "conjures a bouquet of flowers from the caster's wand",
+      "course": "Transfiguration"
+    },
+    {
+      "id": 4,
+      "bookId": 4,
+      "answer": "Herbivicus",
+      "action": "rapidly increases a plant's growth rate, causes flowers to bloom",
+      "course": "Herbology"
+    },
+    {
+      "id": 1,
+      "bookId": 5,
+      "answer": "Silencio",
+      "action": "renders the target temporarily mute",
+      "course": "Charms"
+    },
+    {
+      "id": 2,
+      "bookId": 5,
+      "answer": "Evanesco",
+      "action": "vanishes an object",
+      "course": "Transfiguration"
+    },
+    {
+      "id": 3,
+      "bookId": 5,
+      "answer": "Expecto Patronum",
+      "action": "conjures a force of positive energy to protect the caster from Dementors",
+      "course": "Defense Against the Dark Arts, unofficial curriculum"
+    },
+    {
+      "id": 4,
+      "bookId": 5,
+      "answer": "Dittany",
+      "action": "heals wounds by growing fresh skin over the injury",
+      "course": "Herbology"
+    },
+    {
+      "id": 1,
+      "bookId": 6,
+      "answer": "Aguamenti",
+      "action": "conjures a stream of drinkable water from the tip of the caster's wand",
+      "course": "Charms"
+    },
+    {
+      "id": 2,
+      "bookId": 6,
+      "answer": "Protego",
+      "action": "protects the caster with an invisible shield that deflects both spells and objects",
+      "course": "Defense Against the Dark Arts"
+    },
+    {
+      "id": 3,
+      "bookId": 6,
+      "answer": "Crinus Muto",
+      "action": "transforms the color or style of the caster's hair",
+      "course": "Transfiguration"
+    },
+    {
+      "id": 4,
+      "bookId": 6,
+      "answer": "Draught of Living Death",
+      "action": "causes a deep sleep, similar to suspended animation",
+      "course": "Potions"
+    },
+    {
+      "id": 1,
+      "bookId": 7,
+      "answer": "Impervius",
+      "action": "makes an object repel moisture",
+      "course": "Charms"
+    },
+    {
+      "id": 2,
+      "bookId": 7,
+      "answer": "Veritaserum",
+      "action": "forces the victim to answer all questions truthfully",
+      "course": "Potions"
+    },
+    {
+      "id": 3,
+      "bookId": 7,
+      "answer": "Bubotuber pus",
+      "action": "cures even the worst cases of acne",
+      "course": "Herbology, reviewed from a previous year"
+    },
+    {
+      "id": 4,
+      "bookId": 7,
+      "answer": "Bombarda Maxima",
+      "action": "causes a violent explosion",
+      "course": "Defense Against the Dark Arts"
+    }
   ]
 }
