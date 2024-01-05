@@ -190,7 +190,7 @@ function fillBolts(bolt) {
   } else if (bolt.id === "bolt-2") {
     boltOne.src = "icons/filled-lightening-bolt.png";
     boltTwo.src = "icons/filled-lightening-bolt.png";
-    boltThree.src = "icons/icons/unfilled-lightening-bolt.png";
+    boltThree.src = "icons/unfilled-lightening-bolt.png";
     boltFour.src = "icons/unfilled-lightening-bolt.png";
     boltFive.src = "icons/unfilled-lightening-bolt.png";
     userRating = 2;
