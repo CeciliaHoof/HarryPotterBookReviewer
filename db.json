@@ -8,7 +8,7 @@
       "cover": "https://www.wizardingworld.com/images/products/books/UK/rectangle-1.jpg",
       "summary": "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter is a wizard, and he has a place at Hogwarts School of Witchcraft and Wizardry. An incredible adventure is about to begin!",
       "rating": 4.47,
-      "user_rating": 3
+      "user_rating": 0
     },
     {
       "id": 2,
@@ -141,16 +141,6 @@
       "id": 14,
       "bookId": 7,
       "content": "Culminating in an epic battle between good and evil, this concluding book ties up loose ends while delivering an emotionally charged and satisfying conclusion to an iconic series."
-    },
-    {
-      "bookId": 1,
-      "content": "ye",
-      "id": 15
-    },
-    {
-      "bookId": 1,
-      "content": "uh ",
-      "id": 16
     }
   ],
   "curriculum": [
@@ -262,7 +252,7 @@
       {
         "id": 1,
         "answer": "Silencio",
-        "action": "renders the target temporary mute",
+        "action": "renders the target temporarily mute",
         "course": "Charms"
       },
       {
@@ -273,8 +263,8 @@
       },
       {
         "id": 3,
-        "answer": "Stupefy",
-        "action": "stuns the target, leaving them unconscious",
+        "answer": "Expecto Patronum",
+        "action": "conjures a force of positive energy to protect the caster from Dementors",
         "course": "Defense Against the Dark Arts, unofficial curriculum"
       },
       {
@@ -327,7 +317,7 @@
         "id": 3,
         "answer": "Bubotuber pus",
         "action": "cures even the worst cases of acne",
-        "course": "Herbology, review"
+        "course": "Herbology, reviewed from a previous year"
       },
       {
         "id": 4,
