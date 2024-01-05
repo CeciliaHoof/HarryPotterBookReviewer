@@ -1,6 +1,7 @@
 ## Harry Potter Book Review
 
-<img width="1440" alt="Screenshot 2024-01-04 at 11 36 33 AM" src="https://github.com/Michaelp720/HarryPotterBookReviewer/assets/82983831/ca7040b3-6e29-4308-bdb2-e5f5d38c7be2">
+![Screenshot 2024-01-04 at 9 37 49 PM](https://github.com/Michaelp720/HarryPotterBookReviewer/assets/82983831/15717dfb-017e-4010-ac81-650be0cf1215)
+
 
 
 ## The Harry Potter Book Review allows users:
