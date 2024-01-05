@@ -5,6 +5,7 @@ let selectedBook;
 let userRating;
 let btnClick = 0;
 let draggedAction;
+let exam_passed;
 
 //initial fetch and other fetch functions
 fetch(baseURL)
@@ -84,6 +85,8 @@ const answersLoc = document.querySelector("#answers");
 const actionsLoc = document.querySelector("#actions");
 const currDisplay = document.querySelector("#curriculum-display");
 const congratulations = document.querySelector("#congrats");
+
+const passMessage = document.createElement("h3");
 
 //Render functions
 function renderBooks(bookData) {
@@ -307,27 +310,52 @@ function renderCurriculum(curriculumArr) {
   removeAllChildren(answersLoc);
   removeAllChildren(actionsLoc);
   currDisplay.removeChild(congratulations);
-
+  
+  currDisplay.appendChild(passMessage);
+  
   const examTitle = "Welcome to Hogwarts End of Term Exams, Year";
   exam.textContent = `${examTitle} ${selectedBook.id}`;
 
   let currArr = [];
   currArr = curriculumArr[selectedBook.id - 1];
-  currArr.forEach((element) => renderAnswers(element));
 
-  shuffleArr(currArr); //shuffles array indexes, so that the actions do not render in the same order as the answers
+  if (selectedBook.exam_passed === true){
+    if(selectedBook.id === 7){
+      passMessage.textContent = "Congratulations! You are an official graduate of Hogwarts School of Witchcraft and Wizardry! Good luck in your future endeavors!";
+    }
+    else{
+      passMessage.textContent = "You have already passed this term's exam! Time to move on to harder subjects!";
+    }
+    currArr.forEach((element) => renderAnswers(element));
+  }
+  else {
+    currDisplay.removeChild(passMessage);
+    
+    currArr.forEach((element) => renderAnswers(element));
 
-  currArr.forEach((element) => renderActions(element));
+    shuffleArr(currArr); //shuffles array indexes, so that the actions do not render in the same order as the answers
+
+    currArr.forEach((element) => renderActions(element));
+  }
 }
 
 function renderAnswers(subject) {
   const subjId = subject.id;
   const answerDiv = document.createElement("div");
-  answerDiv.textContent = subject.answer;
-  answerDiv.className = "answers";
-  answerDiv.id = `answer${subjId}`;
-  answerDiv.title = subject.course;
-  answersLoc.appendChild(answerDiv);
+  if (selectedBook.exam_passed === true){
+    answerDiv.textContent = `Correct! ${subject.answer} ${subject.action}. This subject was covered in ${subject.course}.`;
+    answerDiv.style.backgroundColor = "#DAA520";
+    answerDiv.style.color = "#311D00";
+    answerDiv.className = "answers";
+    answersLoc.appendChild(answerDiv);
+  }
+  else{
+    answerDiv.textContent = subject.answer;
+    answerDiv.className = "answers";
+    answerDiv.id = `answer${subjId}`;
+    answerDiv.title = subject.course;
+    answersLoc.appendChild(answerDiv);
+  }
 
   answerDiv.addEventListener(
     "dragover",
@@ -378,10 +406,15 @@ function dragHandler(e) {
       congratulations.textContent =
         "Congratulations! You are an official graduate of Hogwarts School of Witchcraft and Wizardry! Good luck in your future endeavors!";
       currDisplay.appendChild(congratulations);
-    } else {
+      selectedBook.exam_passed = true;
+      
+    }
+    else {
       congratulations.textContent =
         "Congratulations! You passed your end of year assessment! See you next term!";
       currDisplay.appendChild(congratulations);
+      selectedBook.exam_passed = true;
     }
   }
+  else {selectedBook.exam_passed = false;}
 }
