@@ -58,11 +58,7 @@ const reviewsLoc = document.querySelector("#review-list");
 const userReview = document.querySelector("form");
 
 //selectors related to bolts
-const boltOne = document.querySelector("#bolt-1");
-const boltTwo = document.querySelector("#bolt-2");
-const boltThree = document.querySelector("#bolt-3");
-const boltFour = document.querySelector("#bolt-4");
-const boltFive = document.querySelector("#bolt-5");
+const boltDiv = document.querySelector("#user-rating")
 
 //selectors related to dropdown
 const dropdown = document.querySelector(".dropbtn");
@@ -114,23 +110,24 @@ function displayBook(book) {
   let id = book.id;
 
   userRating = book.user_rating;
-  if (userRating === 0) {
-    boltOne.src = "icons/unfilled-lightening-bolt.png";
-    boltTwo.src = "icons/unfilled-lightening-bolt.png";
-    boltThree.src = "icons/unfilled-lightening-bolt.png";
-    boltFour.src = "icons/unfilled-lightening-bolt.png";
-    boltFive.src = "icons/unfilled-lightening-bolt.png";
-  } else if (userRating === 1) {
-    fillBolts(boltOne);
-  } else if (userRating === 2) {
-    fillBolts(boltTwo);
-  } else if (userRating === 3) {
-    fillBolts(boltThree);
-  } else if (userRating === 4) {
-    fillBolts(boltFour);
-  } else if (userRating === 5) {
-    fillBolts(boltFive);
-  }
+  // if (userRating === 0) {
+  //   boltOne.src = "icons/unfilled-lightening-bolt.png";
+  //   boltTwo.src = "icons/unfilled-lightening-bolt.png";
+  //   boltThree.src = "icons/unfilled-lightening-bolt.png";
+  //   boltFour.src = "icons/unfilled-lightening-bolt.png";
+  //   boltFive.src = "icons/unfilled-lightening-bolt.png";
+  // } else if (userRating === 1) {
+  //   fillBolts(boltOne);
+  // } else if (userRating === 2) {
+  //   fillBolts(boltTwo);
+  // } else if (userRating === 3) {
+  //   fillBolts(boltThree);
+  // } else if (userRating === 4) {
+  //   fillBolts(boltFour);
+  // } else if (userRating === 5) {
+  //   fillBolts(boltFive);
+  // }
+  fillBolts(userRating)
 
   fetchEmbeddedData(`${baseURL}${id}`); //fetches and renders reviews
 
@@ -170,50 +167,70 @@ function removeHighlight(elem) {
 }
 
 //Lightening Bolt Event Listener and Handler
-boltOne.addEventListener("click", () => fillBolts(boltOne));
-boltTwo.addEventListener("click", () => fillBolts(boltTwo));
-boltThree.addEventListener("click", () => fillBolts(boltThree));
-boltFour.addEventListener("click", () => fillBolts(boltFour));
-boltFive.addEventListener("click", () => fillBolts(boltFive));
+// boltOne.addEventListener("click", () => fillBolts(boltOne));
+// boltTwo.addEventListener("click", () => fillBolts(boltTwo));
+// boltThree.addEventListener("click", () => fillBolts(boltThree));
+// boltFour.addEventListener("click", () => fillBolts(boltFour));
+// boltFive.addEventListener("click", () => fillBolts(boltFive));
 
-function fillBolts(bolt) {
-  if (bolt.id === "bolt-1") {
-    boltOne.src = "icons/filled-lightening-bolt.png";
-    boltTwo.src = "icons/unfilled-lightening-bolt.png";
-    boltThree.src = "icons/unfilled-lightening-bolt.png";
-    boltFour.src = "icons/unfilled-lightening-bolt.png";
-    boltFive.src = "icons/unfilled-lightening-bolt.png";
-    userRating = 1;
-  } else if (bolt.id === "bolt-2") {
-    boltOne.src = "icons/filled-lightening-bolt.png";
-    boltTwo.src = "icons/filled-lightening-bolt.png";
-    boltThree.src = "icons/unfilled-lightening-bolt.png";
-    boltFour.src = "icons/unfilled-lightening-bolt.png";
-    boltFive.src = "icons/unfilled-lightening-bolt.png";
-    userRating = 2;
-  } else if (bolt.id === "bolt-3") {
-    boltOne.src = "icons/filled-lightening-bolt.png";
-    boltTwo.src = "icons/filled-lightening-bolt.png";
-    boltThree.src = "icons/filled-lightening-bolt.png";
-    boltFour.src = "icons/unfilled-lightening-bolt.png";
-    boltFive.src = "icons/unfilled-lightening-bolt.png";
-    userRating = 3;
-  } else if (bolt.id === "bolt-4") {
-    boltOne.src = "icons/filled-lightening-bolt.png";
-    boltTwo.src = "icons/filled-lightening-bolt.png";
-    boltThree.src = "icons/filled-lightening-bolt.png";
-    boltFour.src = "icons/filled-lightening-bolt.png";
-    boltFive.src = "icons/unfilled-lightening-bolt.png";
-    userRating = 4;
-  } else if (bolt.id === "bolt-5") {
-    boltOne.src = "icons/filled-lightening-bolt.png";
-    boltTwo.src = "icons/filled-lightening-bolt.png";
-    boltThree.src = "icons/filled-lightening-bolt.png";
-    boltFour.src = "icons/filled-lightening-bolt.png";
-    boltFive.src = "icons/filled-lightening-bolt.png";
-    userRating = 5;
+// function fillBolts(bolt) {
+//   if (bolt.id === "bolt-1") {
+//     boltOne.src = "icons/filled-lightening-bolt.png";
+//     boltTwo.src = "icons/unfilled-lightening-bolt.png";
+//     boltThree.src = "icons/unfilled-lightening-bolt.png";
+//     boltFour.src = "icons/unfilled-lightening-bolt.png";
+//     boltFive.src = "icons/unfilled-lightening-bolt.png";
+//     userRating = 1;
+//   } else if (bolt.id === "bolt-2") {
+//     boltOne.src = "icons/filled-lightening-bolt.png";
+//     boltTwo.src = "icons/filled-lightening-bolt.png";
+//     boltThree.src = "icons/unfilled-lightening-bolt.png";
+//     boltFour.src = "icons/unfilled-lightening-bolt.png";
+//     boltFive.src = "icons/unfilled-lightening-bolt.png";
+//     userRating = 2;
+//   } else if (bolt.id === "bolt-3") {
+//     boltOne.src = "icons/filled-lightening-bolt.png";
+//     boltTwo.src = "icons/filled-lightening-bolt.png";
+//     boltThree.src = "icons/filled-lightening-bolt.png";
+//     boltFour.src = "icons/unfilled-lightening-bolt.png";
+//     boltFive.src = "icons/unfilled-lightening-bolt.png";
+//     userRating = 3;
+//   } else if (bolt.id === "bolt-4") {
+//     boltOne.src = "icons/filled-lightening-bolt.png";
+//     boltTwo.src = "icons/filled-lightening-bolt.png";
+//     boltThree.src = "icons/filled-lightening-bolt.png";
+//     boltFour.src = "icons/filled-lightening-bolt.png";
+//     boltFive.src = "icons/unfilled-lightening-bolt.png";
+//     userRating = 4;
+//   } else if (bolt.id === "bolt-5") {
+//     boltOne.src = "icons/filled-lightening-bolt.png";
+//     boltTwo.src = "icons/filled-lightening-bolt.png";
+//     boltThree.src = "icons/filled-lightening-bolt.png";
+//     boltFour.src = "icons/filled-lightening-bolt.png";
+//     boltFive.src = "icons/filled-lightening-bolt.png";
+//     userRating = 5;
+//   }
+//   selectedBook.user_rating = userRating;
+//   patchBook(selectedBook);
+// }
+const bolts = [];
+
+for (let i = 1; i <= 5; i++) {
+  const bolt = document.createElement("img");
+  bolt.id = `${i}`;
+  bolt.src = "icons/unfilled-lightening-bolt.png";
+  bolt.alt = `Bolt_${i}`
+  boltDiv.appendChild(bolt);
+  bolts.push(bolt);
+
+  bolt.addEventListener("click", () => fillBolts(i));
+}
+
+function fillBolts(num) {
+  for (let i = 0; i < bolts.length; i++) {
+    bolts[i].src = i < num ? "icons/filled-lightening-bolt.png" : "icons/unfilled-lightening-bolt.png";
   }
-  selectedBook.user_rating = userRating;
+  selectedBook.user_rating = num;
   patchBook(selectedBook);
 }
 
